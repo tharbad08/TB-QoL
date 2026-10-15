@@ -1,0 +1,36 @@
+name: Validate and package mods
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mods:
+    name: Validate JSON and package mods
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate mod files
+        run: python3 Tools/mods.py check
+
+      - name: Package mods individually
+        run: python3 Tools/mods.py package --output dist
+
+      - name: Upload per-mod ZIPs
+        uses: actions/upload-artifact@v4
+        with:
+          name: TB-QoL-mods
+          path: dist/*.zip
+          if-no-files-found: error

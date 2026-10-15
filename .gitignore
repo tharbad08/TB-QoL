@@ -1,0 +1,21 @@
+# Locally generated packages and temporary files
+/dist/
+/build/
+/tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.log
+
+# IDE / OS state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Never commit collected game DLLs, extracted Workshop ZIPs or saves
+*.dll
+*.pdb
+*.7z
+*.zip
+*.sav
