@@ -1,0 +1,25 @@
+{
+  "Name": "Tunneling Menu Fix",
+  "Version": "1.1.0",
+  "Id": "tharbad08.TunnelingMenuFix",
+  "MinimumGameVersion": "1.1.0.2",
+  "Description": "Moves tunnel construction tools out of More Groups Dynamite and into More Tunnels Tunneling. Menu-only compatibility patch; no changes to buildings, resources, or costs.",
+  "RequiredMods": [
+    {
+      "Id": "ModdableToolGroups",
+      "MinimumVersion": "11.0.0"
+    },
+    {
+      "Id": "MoreTunnels",
+      "MinimumVersion": "1.5"
+    },
+    {
+      "Id": "KnatteAnka.MoreGroups",
+      "MinimumVersion": "1.1.0.2"
+    },
+    {
+      "Id": "TonWolfe.MoreMines",
+      "MinimumVersion": "1.1.20"
+    }
+  ]
+}
