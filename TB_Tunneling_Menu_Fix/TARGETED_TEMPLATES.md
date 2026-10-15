@@ -1,0 +1,58 @@
+# Target templates
+
+Source: `3293437485/version-1.1.0/ToolGroups/BlockObjectToolGroup.SubGroup_MGDynamite.blueprint.json`.
+
+Only tunneling-related names from this file are patched. All other names are left in Dynamite.
+
+- `PlatformPowerShaftTunnel.Emberpelts`
+- `PlatformPowerShaftTunnel.Folktails`
+- `PlatformPowerShaftTunnel.IronTeeth`
+- `PlatformPowerShaftTunnel.Whitepaws`
+- `Shafnel.Emberpelts`
+- `Shafnel.Folktails`
+- `Shafnel.IronTeeth`
+- `Shafnel.Whitepaws`
+- `Tubnel.Emberpelts`
+- `Tubnel.Folktails`
+- `Tubnel.IronTeeth`
+- `Tubnel.Whitepaws`
+- `PowerShaftPlatformTunnel.Folktails`
+- `VerticalPowerShaftTunnel.Folktails`
+- `PowerShaftPlatformTunnel.IronTeeth`
+- `VerticalPowerShaftTunnel.IronTeeth`
+- `TubewayPlatformTunnel.IronTeeth`
+- `VerticalTubewayTunnel.IronTeeth`
+- `Tunnel.IronTeeth`
+- `Tunnel.Folktails`
+- `Tunnel.Emberpelts`
+- `PathTunnel.Folktails`
+- `PathTunnel.IronTeeth`
+- `Tunnel.Whitepaws`
+- `UPath.Emberpelts`
+- `UPath.Folktails`
+- `UPath.IronTeeth`
+- `PathPlatformTunnel.Folktails`
+- `PathPlatformTunnel.IronTeeth`
+- `PlatformTubewayTunnel.Emberpelts`
+- `PlatformTubewayTunnel.Folktails`
+- `PlatformTubewayTunnel.IronTeeth`
+- `PlatformTubewayTunnel.GreedyBuilders`
+- `PlatformTubewayTunnel.Whitepaws`
+- `PlatformPathTunnel.Emberpelts`
+- `PlatformPathTunnel.Folktails`
+- `PlatformPathTunnel.IronTeeth`
+- `PlatformPathTunnel.Whitepaws`
+- `LadderTunnel.IronTeeth`
+- `LadderTunnel.Folktails`
+- `USV.IronTeeth`
+- `USL.IronTeeth`
+- `USl.IronTeeth`
+- `USV.Folktails`
+- `USL.Folktails`
+- `USl.Folktails`
+- `USV.Emberpelts`
+- `USL.Emberpelts`
+- `USl.Emberpelts`
+- `USS.IronTeeth`
+- `USS.Folktails`
+- `USS.Emberpelts`
