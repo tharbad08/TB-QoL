@@ -1,6 +1,6 @@
 # Monument Cost Rebalance
 
-A small, **JSON-only** Timberborn 1.1 compatibility mod by **tharbad08**.
+A small, **JSON-only** Timberborn 1.1 compatibility mod (v1.0.1) by **tharbad08**.
 
 Changes only More Mines' construction costs for the **Folktails Earth Recultivator** and **Iron Teeth Earth Repopulator**. The original vanilla monument definitions are not edited.
 
@@ -31,7 +31,7 @@ The other required mods of More Mines are managed by More Mines itself.
 2. Copy the **entire `MonumentCostRebalance` folder** into your local Timberborn `Mods` folder, or extract the released ZIP there. The folder must directly contain `manifest.json`.
 3. Enable **Monument Cost Rebalance** in the game's mod manager, restart the game, and check both monuments' construction-cost tooltips.
 
-Do not edit the More Mines Workshop directory. **Check load order:** in Timberborn's mod manager, select **Reset load order**, then confirm **More Mines** appears *above* **Monument Cost Rebalance** (higher entries load first). If you use a custom order, move the patch below More Mines manually. The `RequiredMods` declaration identifies this prerequisite, but an already saved manual order is not guaranteed to be rearranged on installation.
+Do not edit the More Mines Workshop directory. **Version 1.0.1 fixes dependency sorting** by retaining More Mines in `RequiredMods` and mirroring its optional dependencies (`TonWolfe.Market`, `KnatteAnka.MoreGroups` and `Redic.NewStyles`) in this mod's `OptionalMods`. These remain **optional**, not new installation requirements. Mirroring the parent dependencies avoids the same manifest-ordering issue previously fixed in Dirt Levee Vanilla Fix. Verify that **More Mines** appears above **Monument Cost Rebalance**. Manually rearranging a custom order should be a fallback, not the fix itself.
 
 ## Implementation
 

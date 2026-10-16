@@ -8,8 +8,8 @@ Each mod has its own top-level folder, manifest, assets, dependencies, documenta
 
 | Mod | Version | Game | Purpose | Testing |
 | --- | --- | --- | --- | --- |
-| [Tunneling Menu Fix](./TunnelingMenuFix/) | 1.1.0 | Timberborn 1.1 | Moves tunnel tools from the Dynamite submenu into Tunneling | Static checks passed; in-game testing pending |
-| [Monument Cost Rebalance](./MonumentCostRebalance/) | 1.0.0 | Timberborn 1.1 | Removes precious-metal costs from the two final wonders while keeping More Mines Metal Parts and restoring vanilla Metal Blocks | Static checks passed; in-game testing pending |
+| [Tunneling Menu Fix](./TunnelingMenuFix/) | 1.1.1 | Timberborn 1.1 | Moves tunnel tools from the Dynamite submenu into Tunneling | Static checks passed; in-game testing pending |
+| [Monument Cost Rebalance](./MonumentCostRebalance/) | 1.0.1 | Timberborn 1.1 | Removes precious-metal costs from the two final wonders while keeping More Mines Metal Parts and restoring vanilla Metal Blocks | Static checks passed; in-game testing pending |
 
 See each mod's README for its requirements and installation instructions.
 
@@ -17,8 +17,8 @@ See each mod's README for its requirements and installation instructions.
 
 1. Download the ZIP for an individual mod from a successful [GitHub Actions run](./actions/workflows/validate-mods.yml) (under **Artifacts**), or use the mod's source folder.
 2. Extract **only that mod's folder** into Timberborn's local `Mods` directory. The folder must contain its own `manifest.json`.
-3. Enable the mod and its prerequisites. Select **Reset load order** in Timberborn's mod manager, then **verify the target Workshop mods appear above each compatibility patch** (higher in the list loads first). A manually saved order can persist even when manifests list dependencies.
-4. Restart the game, then check that the patch actually takes effect. The GitHub build cannot confirm your local mod-manager order.
+3. Enable the mod and its prerequisites. The patch manifests declare their target mods in `RequiredMods` **and mirror the target mods' optional dependencies**, following the fix previously needed by Dirt Levee Vanilla Fix. The latter avoids a known dependency-ordering failure in Timberborn 1.1.
+4. Restart the game and verify the patch applies. If a custom mod-manager order was already saved, verify the targets are above each patch; do not rely on a manual sort as the only fix.
 
 **Important:** If you already installed the earlier `TB_Tunneling_Menu_Fix` folder, remove it before installing the new `TunnelingMenuFix` folder; both contain the same mod ID.
 
@@ -48,10 +48,11 @@ Requires only Python 3 (standard library):
 
 ```sh
 python3 Tools/mods.py check
+python3 Tools/check_load_order.py
 python3 Tools/mods.py package --output dist
 ```
 
-`dist/` will contain one ZIP per mod, each with the correct top-level install folder. The same commands run in GitHub Actions. The checks validate manifests and JSON syntax; they **do not** replace in-game testing.
+`dist/` will contain one ZIP per mod, each with the correct top-level install folder. The same commands run in GitHub Actions. The checks validate manifests and JSON syntax **and enforce upstream optional-dependency mirroring** against the [pinned 1.1 manifest baseline](./Docs/load-order-baseline.json). They **do not** replace in-game testing.
 
 See [Adding a mod](./Docs/ADDING_MODS.md), [Testing](./Docs/TESTING.md), and [AI/contributor guidance](./AGENTS.md).
 

@@ -1,6 +1,6 @@
 {
   "Name": "Monument Cost Rebalance",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Id": "tharbad08.MonumentCostRebalance",
   "MinimumGameVersion": "1.1.0.2",
   "Description": "Removes More Mines gold nugget and silver bar construction requirements from the Folktails and Iron Teeth final monuments, restores 700 metal blocks, and leaves all other requirements unchanged.",
@@ -8,6 +8,17 @@
     {
       "Id": "TonWolfe.MoreMines",
       "MinimumVersion": "1.1.20"
+    }
+  ],
+  "OptionalMods": [
+    {
+      "Id": "TonWolfe.Market"
+    },
+    {
+      "Id": "KnatteAnka.MoreGroups"
+    },
+    {
+      "Id": "Redic.NewStyles"
     }
   ]
 }

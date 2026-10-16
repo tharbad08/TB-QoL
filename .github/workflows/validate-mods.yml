@@ -25,6 +25,9 @@ jobs:
       - name: Validate mod files
         run: python3 Tools/mods.py check
 
+      - name: Verify upstream optional dependency mirroring
+        run: python3 Tools/check_load_order.py
+
       - name: Package mods individually
         run: python3 Tools/mods.py package --output dist
 

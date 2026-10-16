@@ -6,6 +6,7 @@ Run at the repository root:
 
 ```sh
 python3 Tools/mods.py check
+python3 Tools/check_load_order.py
 python3 Tools/mods.py package --output dist
 ```
 
@@ -17,7 +18,8 @@ For each changed mod:
 
 - Confirm the Timberborn build and required mod versions.
 - Install the generated ZIP **without** keeping an older directory of the same mod ID.
-- In the mod manager, use **Reset load order** when necessary, then verify each patch is **below every mod it patches**; entries above it load first. A saved manual order may place a new local patch too early despite valid `RequiredMods`.
+- Check that each patch declares its target mods in `RequiredMods` **and mirrors all target `OptionalMods`**; use `python3 Tools/check_load_order.py` to catch missing mirrored dependencies against the pinned original-mod manifests. This is the same fix used for Dirt Levee Vanilla Fix.
+- In the mod manager, verify each patch is **below every mod it patches**; entries above it load first. Reset/custom arrangement is a diagnostic fallback, not a substitute for manifest dependency fixes.
 - Record actual observed load order rather than assuming the manifest's dependencies mean the correct order was used.
 - Start a fresh game or a disposable copy of a save; verify startup and check `Player.log`.
 - Test the intended changed behavior and look for duplicates, missing icons, unexpected unlocks, or broken menus.

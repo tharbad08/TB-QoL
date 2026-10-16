@@ -1,0 +1,67 @@
+{
+  "Source": "Timberborn 1.1 installed upstream manifests, from timberborn-tunneling-menu-blueprints.zip (2026-10-14). Refresh when parent mods update.",
+  "UpstreamMods": {
+    "MoreTunnels": {
+      "Version": "1.5",
+      "OptionalMods": [
+        "GreedyBuilders"
+      ]
+    },
+    "KnatteAnka.MoreGroups": {
+      "Version": "1.1.0.2",
+      "OptionalMods": [
+        "Lapantouflemagic.1x1x2Storage",
+        "Lapantouflemagic.Logstairs",
+        "KnatteAnka.Staircase",
+        "KnatteAnka.ExtendedFloodgates",
+        "Tobbert.Ladder",
+        "Timberborn.OldGopher.Pipe",
+        "MoreTunnels",
+        "alin.dirt",
+        "HangingOverhang",
+        "StableCore",
+        "Emberpelts",
+        "EmberpeltsLadder",
+        "ConvenientLargeWaterWheel",
+        "BobPlatforms",
+        "BobingaboutZiplineLevee",
+        "BobingaboutTubewayLevee",
+        "BobingaboutTinyTubewayStation",
+        "alin.sluice",
+        "Battery.Flywheels",
+        "MoreTunnels.Ladder"
+      ]
+    },
+    "TonWolfe.MoreMines": {
+      "Version": "1.1.20",
+      "OptionalMods": [
+        "TonWolfe.Market",
+        "KnatteAnka.MoreGroups",
+        "Redic.NewStyles"
+      ]
+    }
+  },
+  "Patches": {
+    "TunnelingMenuFix": {
+      "RequiredMods": [
+        "ModdableToolGroups",
+        "MoreTunnels",
+        "KnatteAnka.MoreGroups",
+        "TonWolfe.MoreMines"
+      ],
+      "MirrorOptionalModsOf": [
+        "MoreTunnels",
+        "KnatteAnka.MoreGroups",
+        "TonWolfe.MoreMines"
+      ]
+    },
+    "MonumentCostRebalance": {
+      "RequiredMods": [
+        "TonWolfe.MoreMines"
+      ],
+      "MirrorOptionalModsOf": [
+        "TonWolfe.MoreMines"
+      ]
+    }
+  }
+}
