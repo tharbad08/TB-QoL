@@ -17,7 +17,8 @@ See each mod's README for its requirements and installation instructions.
 
 1. Download the ZIP for an individual mod from a successful [GitHub Actions run](./actions/workflows/validate-mods.yml) (under **Artifacts**), or use the mod's source folder.
 2. Extract **only that mod's folder** into Timberborn's local `Mods` directory. The folder must contain its own `manifest.json`.
-3. Enable the mod and its dependencies in the game's mod manager and restart if prompted.
+3. Enable the mod and its prerequisites. Select **Reset load order** in Timberborn's mod manager, then **verify the target Workshop mods appear above each compatibility patch** (higher in the list loads first). A manually saved order can persist even when manifests list dependencies.
+4. Restart the game, then check that the patch actually takes effect. The GitHub build cannot confirm your local mod-manager order.
 
 **Important:** If you already installed the earlier `TB_Tunneling_Menu_Fix` folder, remove it before installing the new `TunnelingMenuFix` folder; both contain the same mod ID.
 

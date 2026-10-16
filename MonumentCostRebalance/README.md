@@ -31,7 +31,7 @@ The other required mods of More Mines are managed by More Mines itself.
 2. Copy the **entire `MonumentCostRebalance` folder** into your local Timberborn `Mods` folder, or extract the released ZIP there. The folder must directly contain `manifest.json`.
 3. Enable **Monument Cost Rebalance** in the game's mod manager, restart the game, and check both monuments' construction-cost tooltips.
 
-Do not edit the More Mines Workshop directory. The `RequiredMods` manifest entry makes this mod depend on More Mines so that it applies its cost overrides after it.
+Do not edit the More Mines Workshop directory. **Check load order:** in Timberborn's mod manager, select **Reset load order**, then confirm **More Mines** appears *above* **Monument Cost Rebalance** (higher entries load first). If you use a custom order, move the patch below More Mines manually. The `RequiredMods` declaration identifies this prerequisite, but an already saved manual order is not guaranteed to be rearranged on installation.
 
 ## Implementation
 

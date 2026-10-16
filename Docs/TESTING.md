@@ -17,6 +17,8 @@ For each changed mod:
 
 - Confirm the Timberborn build and required mod versions.
 - Install the generated ZIP **without** keeping an older directory of the same mod ID.
+- In the mod manager, use **Reset load order** when necessary, then verify each patch is **below every mod it patches**; entries above it load first. A saved manual order may place a new local patch too early despite valid `RequiredMods`.
+- Record actual observed load order rather than assuming the manifest's dependencies mean the correct order was used.
 - Start a fresh game or a disposable copy of a save; verify startup and check `Player.log`.
 - Test the intended changed behavior and look for duplicates, missing icons, unexpected unlocks, or broken menus.
 - Repeat for every supported faction and optional-mod combination that matters.

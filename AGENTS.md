@@ -11,5 +11,6 @@ This is a **multi-mod Timberborn repository**. Follow this file when making chan
 - If an external mod or game version is required, use explicit IDs and versions when verified. Never guess game APIs or mark untested gameplay as verified.
 - When reorganizing, preserve mod IDs and explain any local folder rename that could cause duplicate installations.
 - Only use **tharbad08** as maintainer/author identity in manifests, documentation and commit metadata. Do not include private names or identifying paths.
+- When adding a compatibility mod, resolve its target mods' **exact IDs** from manifests and list them in `RequiredMods`. Explain that the mod manager can preserve a custom order: instruct users to **Reset load order** or manually place the patch below its targets, and confirm the resulting order. No manifest-only, GitHub Actions, or ZIP validation can guarantee the user's persisted in-game ordering.
 - A patch is not proven working until tested in game. Be candid about what was checked.
 - Upstream PRs must follow that upstream project's own contribution guidelines and coding style; these repository instructions do not override them.
