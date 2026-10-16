@@ -1,0 +1,29 @@
+{
+  "TWBuildingCostModifierListSpec": {
+    "CostModifiers": [
+      {
+        "ModIds": [
+          "TonWolfe.MoreMines"
+        ],
+        "BuildingCost": [
+          {
+            "Id": "Gear",
+            "Amount": 2000
+          },
+          {
+            "Id": "TreatedPlank",
+            "Amount": 2000
+          },
+          {
+            "Id": "MetalBlock",
+            "Amount": 1500
+          },
+          {
+            "Id": "MetalPart",
+            "Amount": 400
+          }
+        ]
+      }
+    ]
+  }
+}

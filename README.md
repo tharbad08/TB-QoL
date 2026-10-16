@@ -9,6 +9,7 @@ Each mod has its own top-level folder, manifest, assets, dependencies, documenta
 | Mod | Version | Game | Purpose | Testing |
 | --- | --- | --- | --- | --- |
 | [Tunneling Menu Fix](./TunnelingMenuFix/) | 1.1.0 | Timberborn 1.1 | Moves tunnel tools from the Dynamite submenu into Tunneling | Static checks passed; in-game testing pending |
+| [Monument Cost Rebalance](./MonumentCostRebalance/) | 1.0.0 | Timberborn 1.1 | Removes precious-metal costs from the two final wonders while keeping More Mines Metal Parts and restoring vanilla Metal Blocks | Static checks passed; in-game testing pending |
 
 See each mod's README for its requirements and installation instructions.
 
@@ -24,17 +25,21 @@ See each mod's README for its requirements and installation instructions.
 
 ```text
 TB-QoL/
-├── TunnelingMenuFix/      # One complete, independently installable mod
+├── TunnelingMenuFix/      # Mod 1: tunnel tools menu patch
 │   ├── manifest.json
 │   ├── README.md
 │   └── ...                # Blueprint JSON and other mod files
+├── MonumentCostRebalance/ # Mod 2: endgame monument costs
+│   ├── manifest.json
+│   ├── README.md
+│   └── ...                # Two monument blueprint overrides
 ├── Docs/                 # Adding and testing mods
 ├── Tools/                # Shared validation + ZIP packaging
 ├── .github/workflows/    # Per-mod CI validation and downloads
 └── README.md             # Catalog of all mods
 ```
 
-For new mods, add another **top-level PascalCase directory** beside `TunnelingMenuFix/`. Do not put unrelated mod files in another mod's directory.
+For new mods, add another **top-level PascalCase directory** beside `TunnelingMenuFix/` and `MonumentCostRebalance/`. Do not put unrelated mod files in another mod's directory.
 
 ## Validate and package locally
 
