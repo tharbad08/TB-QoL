@@ -1,5 +1,5 @@
 {
-  "Source": "Timberborn 1.1 installed upstream manifests, from timberborn-tunneling-menu-blueprints.zip (2026-10-14). Refresh when parent mods update.",
+  "Source": "Timberborn 1.1 original upstream manifests in timberborn-tunneling-menu-blueprints.zip (2026-10-14) and Rainborn manifest in timberborn-build-refs-20261014-013425.zip. Refresh when upstream mods update.",
   "UpstreamMods": {
     "MoreTunnels": {
       "Version": "1.5",
@@ -39,6 +39,10 @@
         "KnatteAnka.MoreGroups",
         "Redic.NewStyles"
       ]
+    },
+    "academicunwinds.Rainborn": {
+      "Version": "0.2.0.4",
+      "OptionalMods": []
     }
   },
   "Patches": {
@@ -53,6 +57,9 @@
         "MoreTunnels",
         "KnatteAnka.MoreGroups",
         "TonWolfe.MoreMines"
+      ],
+      "OptionalPatchMods": [
+        "academicunwinds.Rainborn"
       ]
     },
     "MonumentCostRebalance": {

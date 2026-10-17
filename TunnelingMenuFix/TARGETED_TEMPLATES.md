@@ -56,3 +56,10 @@ Only tunneling-related names from this file are patched. All other names are lef
 - `USS.IronTeeth`
 - `USS.Folktails`
 - `USS.Emberpelts`
+
+## Optional Rainborn excavation flags
+
+These are added to Tunneling without changing Rainborn’s own building blueprints. The existing `DoNotIncludePlaceableToolGroup` setting suppresses their original Landscaping placement when Rainborn is installed.
+
+- `ExcavationFlag.Folktails`
+- `ExcavationFlag.IronTeeth`

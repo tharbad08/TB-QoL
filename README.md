@@ -8,7 +8,7 @@ Each mod has its own top-level folder, manifest, assets, dependencies, documenta
 
 | Mod | Version | Game | Purpose | Testing |
 | --- | --- | --- | --- | --- |
-| [Tunneling Menu Fix](./TunnelingMenuFix/) | 1.1.1 | Timberborn 1.1 | Moves tunnel tools from the Dynamite submenu into Tunneling | Static checks passed; in-game testing pending |
+| [Tunneling Menu Fix](./TunnelingMenuFix/) | 1.1.2 | Timberborn 1.1 | Moves tunnel tools and optional Rainborn excavation flags into Tunneling | Static checks passed; in-game testing pending |
 | [Monument Cost Rebalance](./MonumentCostRebalance/) | 1.0.1 | Timberborn 1.1 | Removes precious-metal costs from the two final wonders while keeping More Mines Metal Parts and restoring vanilla Metal Blocks | Static checks passed; in-game testing pending |
 
 See each mod's README for its requirements and installation instructions.

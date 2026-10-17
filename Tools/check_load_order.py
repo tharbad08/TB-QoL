@@ -28,6 +28,17 @@ def main():
                 errors.append(f"{folder}: upstream mod not required: {upstream}")
             all_optional.update(baseline["UpstreamMods"][upstream]["OptionalMods"])
         expected_optional = all_optional - declared - {manifest["Id"]}
+        # Optional integration targets must remain optional and load earlier
+        # when installed; do not make Rainborn mandatory for the base patch.
+        optional_targets = set(spec.get("OptionalPatchMods", []))
+        for upstream in optional_targets:
+            if upstream not in baseline["UpstreamMods"]:
+                errors.append(f"{folder}: missing optional upstream snapshot: {upstream}")
+                continue
+            if upstream in declared:
+                errors.append(f"{folder}: optional target incorrectly required: {upstream}")
+            all_optional.update(baseline["UpstreamMods"][upstream]["OptionalMods"])
+        expected_optional = (all_optional | optional_targets) - declared - {manifest["Id"]}
         actual_optional = set(optional)
         if len(optional) != len(actual_optional):
             errors.append(f"{folder}: duplicate OptionalMods IDs")

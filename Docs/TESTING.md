@@ -26,7 +26,7 @@ For each changed mod:
 - Repeat for every supported faction and optional-mod combination that matters.
 - Update the mod README with actual test results. Distinguish between *not tested*, *static checks only*, and *tested in-game*.
 
-For **Tunneling Menu Fix** specifically: check Landscaping → Dynamite and Tunneling, including the locked state of tools, while More Groups, More Tunnels, More Mines, and Moddable Tool Groups are enabled.
+For **Tunneling Menu Fix** specifically: check Landscaping → Dynamite and Tunneling, including the locked state of tools, while More Groups, More Tunnels, More Mines, and Moddable Tool Groups are enabled. With optional Rainborn enabled, verify that `ExcavationFlag.Folktails` and `ExcavationFlag.IronTeeth` appear only under Tunneling. Repeat with Rainborn disabled to ensure the menu patch still starts and works without it.
 
 ## Scope
 

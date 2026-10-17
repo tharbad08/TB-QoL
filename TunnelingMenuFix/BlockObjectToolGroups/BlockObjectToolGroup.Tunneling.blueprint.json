@@ -52,7 +52,9 @@
       "USl.Emberpelts",
       "USS.IronTeeth",
       "USS.Folktails",
-      "USS.Emberpelts"
+      "USS.Emberpelts",
+      "ExcavationFlag.IronTeeth",
+      "ExcavationFlag.Folktails"
     ],
     "ChildrenExplicitOrderedIds#append": [
       {
