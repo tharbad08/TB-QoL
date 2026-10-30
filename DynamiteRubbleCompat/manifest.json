@@ -1,0 +1,19 @@
+{
+  "Name": "Dynamite Rubble Compatibility",
+  "Version": "1.1.1",
+  "Id": "tharbad08.DynamiteRubbleCompat",
+  "MinimumGameVersion": "1.1.0.2",
+  "Description": "Dynamite Rubble dirt drops for More Mines and More Tunnels explosions, without modifying either upstream mod.",
+  "RequiredMods": [
+    { "Id": "Harmony" },
+    { "Id": "DynamiteRubble", "MinimumVersion": "1.0.0" },
+    { "Id": "TonWolfe.MoreMines", "MinimumVersion": "1.1.20" },
+    { "Id": "MoreTunnels", "MinimumVersion": "1.5" }
+  ],
+  "OptionalMods": [
+    { "Id": "GreedyBuilders" },
+    { "Id": "TonWolfe.Market" },
+    { "Id": "KnatteAnka.MoreGroups" },
+    { "Id": "Redic.NewStyles" }
+  ]
+}

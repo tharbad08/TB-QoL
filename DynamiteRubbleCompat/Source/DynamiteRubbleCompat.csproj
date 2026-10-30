@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <AssemblyName>DynamiteRubbleCompat</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RealRefsRoot Condition="'$(RealRefsRoot)' == ''">$(MSBuildThisFileDirectory)../../../real-refs</RealRefsRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <GameDll Include="$(RealRefsRoot)/game/*.dll" />
+    <Reference Include="@(GameDll)">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="DynamiteRubble"><HintPath>$(RealRefsRoot)/mods/DynamiteRubble.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="More Mines"><HintPath>$(RealRefsRoot)/mods/More Mines.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="MoreTunnels"><HintPath>$(RealRefsRoot)/mods/MoreTunnels.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(RealRefsRoot)/mods/0Harmony.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

@@ -33,3 +33,7 @@ The shared [GitHub Actions workflow](../.github/workflows/validate-mods.yml) che
 New folder names become ZIP root paths. If you rename a previously installed mod directory, document removing the old local directory to avoid loading two copies.
 
 Do not put source archives, Steam downloads, user saves, logs, or game DLLs in this repository.
+
+## Explicit compiled-mod exception
+
+`DynamiteRubbleCompat/` is a user-requested runtime integration, not a JSON blueprint. Keep its `Source/` C# project in its own folder and build it only against real, pinned Timberborn 1.1 game/mod DLLs using its dedicated workflow. `Tools/mods.py check` still validates its manifest but `Tools/mods.py package` deliberately skips its source tree rather than shipping an unusable ZIP. Only the compiled workflow can publish its installable ZIP; never commit private references or third-party DLLs.

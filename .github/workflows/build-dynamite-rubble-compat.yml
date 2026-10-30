@@ -1,0 +1,78 @@
+name: Build Dynamite Rubble Compatibility
+
+on:
+  push:
+    paths:
+      - 'DynamiteRubbleCompat/**'
+      - '.github/workflows/build-dynamite-rubble-compat.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout TB-QoL
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Download exact private 1.1 DLL references
+        env:
+          GH_TOKEN: ${{ secrets.TB_DLLS_READ_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "$GH_TOKEN" ]]; then
+            echo "::error::Set TB_DLLS_READ_TOKEN (read-only access to tharbad08/TB-dlls) in this repository Actions secrets."
+            exit 1
+          fi
+          mkdir -p refs-download
+          gh release download timberborn-build-refs-20261014-013425 \
+            --repo tharbad08/TB-dlls \
+            --pattern timberborn-build-refs-20261014-013425.zip \
+            --dir refs-download
+          echo '5505a714225ba5f13f9238a4552a810b4954495ce1daaa143d2a1eefc3792465  refs-download/timberborn-build-refs-20261014-013425.zip' | sha256sum -c -
+          unzip -q refs-download/timberborn-build-refs-20261014-013425.zip -d refs-download
+
+      - name: Stage genuine game and upstream DLLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=refs-download/timberborn-build-refs
+          mkdir -p real-refs/{game,mods}
+          cp "$ROOT"/game/*.dll real-refs/game/
+          cp "$ROOT"/workshop/library-1/3677595367/DynamiteRubble.dll real-refs/mods/
+          cp "$ROOT"/workshop/library-1/3677595367/0Harmony.dll real-refs/mods/
+          cp "$ROOT"/workshop/library-1/3723216060/version-1.1.0.2/Scripts/"More Mines.dll" real-refs/mods/
+          cp "$ROOT"/workshop/library-1/3471578532/version-1.1.0.2/Scripts/MoreTunnels.dll real-refs/mods/
+          test -s real-refs/mods/DynamiteRubble.dll
+          test -s real-refs/mods/"More Mines.dll"
+          test -s real-refs/mods/MoreTunnels.dll
+
+      - name: Compile against genuine DLLs
+        run: dotnet build DynamiteRubbleCompat/Source/DynamiteRubbleCompat.csproj -c Release --nologo -p:RealRefsRoot="$PWD/real-refs"
+
+      - name: Create only the installable mod ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/package/DynamiteRubbleCompat/version-1.1"
+          mkdir -p "$OUT/Scripts"
+          cp DynamiteRubbleCompat/manifest.json "$OUT/manifest.json"
+          cp DynamiteRubbleCompat/Source/bin/Release/netstandard2.1/DynamiteRubbleCompat.dll "$OUT/Scripts/"
+          test -s "$OUT/Scripts/DynamiteRubbleCompat.dll"
+          (cd "$RUNNER_TEMP/package" && zip -q -r "$RUNNER_TEMP/DynamiteRubbleCompat_1.1.1.zip" DynamiteRubbleCompat)
+          unzip -t "$RUNNER_TEMP/DynamiteRubbleCompat_1.1.1.zip"
+
+      - name: Upload ready-to-install ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: DynamiteRubbleCompat_1.1.1
+          path: ${{ runner.temp }}/DynamiteRubbleCompat_1.1.1.zip
+          if-no-files-found: error

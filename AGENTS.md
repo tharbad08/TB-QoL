@@ -5,7 +5,7 @@ This is a **multi-mod Timberborn repository**. Follow this file when making chan
 - Each mod lives in its own top-level PascalCase directory (for example, `TunnelingMenuFix/`). Never place unrelated mods under a single shared manifest.
 - Preserve each mod's `manifest.json` ID, requirements, paths and load behavior unless the task explicitly changes them.
 - Keep changes scoped to the requested mod. Do not alter other mods, their manifests, or third-party Workshop source just to make a patch work.
-- This collection is intended for **JSON-only mods**. Do not introduce compiled binaries or runtime dependencies without explicit approval.
+- This collection uses **JSON-only mods by default**. A user-requested runtime compatibility fix may introduce a compiled mod only as a separate top-level folder with pinned genuine game/mod references, its own source/build workflow, and installable binary artifact. Never commit or bundle upstream/game DLLs.
 - Maintain clear requirements, installation, compatibility, and test status in each mod's own README.
 - Validate JSON and package every mod with `python3 Tools/mods.py check` and `python3 Tools/mods.py package --output dist` before committing.
 - If an external mod or game version is required, use explicit IDs and versions when verified. Never guess game APIs or mark untested gameplay as verified.

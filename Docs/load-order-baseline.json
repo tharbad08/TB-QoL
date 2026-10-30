@@ -1,5 +1,5 @@
 {
-  "Source": "Timberborn 1.1 original upstream manifests in timberborn-tunneling-menu-blueprints.zip (2026-10-14) and Rainborn manifest in timberborn-build-refs-20261014-013425.zip. Refresh when upstream mods update.",
+  "Source": "Timberborn 1.1 original upstream manifests in timberborn-tunneling-menu-blueprints.zip (2026-10-14) and Rainborn manifest in timberborn-build-refs-20261014-013425.zip. Refresh when upstream mods update. DynamiteRubble 1.0.0 manifest and DLL checked in 2026-10-14 references.",
   "UpstreamMods": {
     "MoreTunnels": {
       "Version": "1.5",
@@ -43,6 +43,10 @@
     "academicunwinds.Rainborn": {
       "Version": "0.2.0.4",
       "OptionalMods": []
+    },
+    "DynamiteRubble": {
+      "Version": "1.0.0",
+      "OptionalMods": []
     }
   },
   "Patches": {
@@ -68,6 +72,19 @@
       ],
       "MirrorOptionalModsOf": [
         "TonWolfe.MoreMines"
+      ]
+    },
+    "DynamiteRubbleCompat": {
+      "RequiredMods": [
+        "Harmony",
+        "DynamiteRubble",
+        "TonWolfe.MoreMines",
+        "MoreTunnels"
+      ],
+      "MirrorOptionalModsOf": [
+        "DynamiteRubble",
+        "TonWolfe.MoreMines",
+        "MoreTunnels"
       ]
     }
   }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and package independently installable, data-only Timberborn mods."""
+"""Validate independent Timberborn mods and package the JSON-only ones."""
 from __future__ import annotations
 
 import argparse
@@ -91,6 +91,9 @@ def validate(mods: list[Path]) -> int:
 def package(mods: list[Path], output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
     for mod in mods:
+        if (mod / "Source" / f"{mod.name}.csproj").exists():
+            print(f"SKIP {mod.name}: compiled mod uses its dedicated build workflow")
+            continue
         path = output / f"{mod.name}.zip"
         with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as archive:
             for file in included_files(mod):
